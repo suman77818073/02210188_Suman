@@ -22,7 +22,6 @@ class LinkedList:
             self.tail = new_node        # Update the tail to the new node
         self._size += 1
         print(f"Appended {element} to the list")
-        print(f"Current size: {self._size}")
 
     def get(self, index):
         if index < 0 or index >= self._size:
@@ -54,7 +53,6 @@ class LinkedList:
             self.tail = new_node
         self._size += 1
         print(f"Prepended {element} to the list")
-        print(f"Current size: {self._size}")
 
     def print_list(self):
         current = self.head
@@ -69,7 +67,7 @@ linked_list = LinkedList()
 linked_list.append(5)          # List: [5]
 linked_list.get(0)             # Output: Element at index 0: 5
 linked_list.set(0, 10)         # List: [10]
-linked_list.get(0)             # Output: Element at index 0: 10
+print(f"Current size: {linked_list.size()}")  # Should print 1
 linked_list.prepend(10)        # List: [10, 10]
 linked_list.append(5)          # List: [10, 10, 5]
 linked_list.print_list()       # Output: Print Linked list: [10, 10, 5]
