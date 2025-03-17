@@ -1,25 +1,25 @@
 class Node:
     def __init__(self, data):
-        self.data = data  # Data field to store the element
-        self.next = None  # Next field to reference the next node
+        self.data = data 
+        self.next = None  
 
 class LinkedList:
     def __init__(self):
-        self.head = None  # Head reference to the first node
-        self.tail = None  # Tail reference to the last node
-        self._size = 0    # Size counter to track the number of elements
+        self.head = None  
+        self.tail = None 
+        self._size = 0    
         print("Created new LinkedList")
         print(f"Current size: {self._size}")
         print(f"Head: {self.head}")
 
     def append(self, element):
-        new_node = Node(element)  # Create a new node
-        if not self.head:  # If the list is empty
+        new_node = Node(element)  
+        if not self.head: 
             self.head = new_node
             self.tail = new_node
         else:
-            self.tail.next = new_node  # Link the old tail to the new node
-            self.tail = new_node        # Update the tail to the new node
+            self.tail.next = new_node 
+            self.tail = new_node       
         self._size += 1
         print(f"Appended {element} to the list")
 
@@ -47,9 +47,9 @@ class LinkedList:
 
     def prepend(self, element):
         new_node = Node(element)
-        new_node.next = self.head  # Link the new node to the old head
-        self.head = new_node        # Update the head to the new node
-        if not self.tail:           # If the list was empty
+        new_node.next = self.head 
+        self.head = new_node        
+        if not self.tail:          
             self.tail = new_node
         self._size += 1
         print(f"Prepended {element} to the list")
@@ -62,12 +62,12 @@ class LinkedList:
             current = current.next
         print("Print Linked list:", elements)
 
-# Example usage
+
 linked_list = LinkedList()
-linked_list.append(5)          # List: [5]
-linked_list.get(0)             # Output: Element at index 0: 5
-linked_list.set(0, 10)         # List: [10]
-print(f"Current size: {linked_list.size()}")  # Should print 1
-linked_list.prepend(10)        # List: [10, 10]
-linked_list.append(5)          # List: [10, 10, 5]
-linked_list.print_list()       # Output: Print Linked list: [10, 10, 5]
+linked_list.append(5)         
+linked_list.get(0)            
+linked_list.set(0, 10)         
+print(f"Current size: {linked_list.size()}")  
+linked_list.prepend(10)       
+linked_list.append(5)          
+linked_list.print_list()      
