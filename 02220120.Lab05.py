@@ -1,6 +1,6 @@
 def binary_search_iterative(arr, target):
     left, right = 0, len(arr) - 1
-    comparisons = 0
+    comparisons = 1
 
     while left <= right:
         comparisons += 1
@@ -43,7 +43,4 @@ index, comparisons = binary_search_iterative(arr, target)
 print("Found at index" if index != -1 else "Not found", index)
 print("Number of comparisons:", comparisons)
 
-print("\nSearching for", target, "using Recursive Binary Search")
-index, comparisons = binary_search_recursive(arr, target)
-print("Found at index" if index != -1 else "Not found", index)
-print("Number of comparisons:", comparisons)
+
