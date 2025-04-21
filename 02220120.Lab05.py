@@ -1,10 +1,10 @@
-def binary_search_iterative(arr, target):
+def binary_search(arr, target):
     left, right = 0, len(arr) - 1
-    comparisons = 0  # Start at 0 and increment only when a comparison is made
+    comparisons = 0
 
     while left <= right:
         mid = (left + right) // 2
-        comparisons += 1  # One comparison for each loop iteration
+        comparisons += 1
 
         if arr[mid] == target:
             return mid, comparisons
@@ -15,14 +15,13 @@ def binary_search_iterative(arr, target):
 
     return -1, comparisons
 
-
 # Example usage
 arr = [12, 23, 34, 45, 56, 67, 89]
 target = 67
 
 print("Sorted List:", arr)
 print(f"Searching for {target} using Binary Search...")
-index, comparisons = binary_search_iterative(arr, target)
+index, comparisons = binary_search(arr, target)
 
 if index != -1:
     print(f"Element found at index: {index}")
